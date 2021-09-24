@@ -8,7 +8,7 @@
 
 Foi utilizado o Figma para a criação do layout.
 
-[Visualizar no Figma](https://www.figma.com/file/kwA5L5ysom12uZLD5I6byu/Botic%C3%A1rio){target="_blank" rel="noopener"} :arrow_upper_right:
+[Visualizar no Figma](https://www.figma.com/file/kwA5L5ysom12uZLD5I6byu/Botic%C3%A1rio){target="_blank"} :arrow_upper_right:
 
 #
 ### :clipboard: Checklist
