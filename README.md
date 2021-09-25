@@ -1,6 +1,6 @@
 ![Boticario](https://res.cloudinary.com/beleza-na-web/image/upload/f_auto,fl_progressive,q_auto:eco,w_0.5/v1/banner/2020_07_26_14_37_15_4/5b8e47a4-9906-4890-9e47-fa880b6fe332-logo-grupo-big.svg)
 
-# Front-End Challenge :dart:
+# Desafio Front-End :dart:
 
 > Eu revendedor 'O Boticário' quero ter benefícios de acordo com o meu volume de vendas.
 
