@@ -1,16 +1,34 @@
 import React from 'react'
-import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom'
+import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom'
+import { Footer } from '../components/Footer'
+import { Header } from '../components/Header'
+import { Fallback } from '../pages/Fallbacks'
+import { Login } from '../pages/Login'
+import { ListPurchase } from '../pages/Purchase/List/ListPurchase'
+import { RegisterPurchase } from '../pages/Purchase/Register'
+import { RegisterUser } from '../pages/User/Register'
 
-export const Routes = () => {
+export const Routes = (): JSX.Element => {
   return (
     <BrowserRouter>
       <Switch>
+        <Route exact path='/login'>
+          <Header />
+          <Login />
+        </Route>
+        
+        <Route exact path='/purchase'>
+          <Header />
+          <ListPurchase />
+        </Route>
 
-        <Route exact path='/login' />
-        <Route exact path='/register' />
-        <Route exact path='/purchase' />
-        <Route exact path='/purchase/register' />
-        <Route exact path='/page-not-found' />
+        <Route path='*/register'>
+          <Footer />
+          <Route exact path='/register' component={RegisterUser} />
+          <Route exact path='/purchase/register' component={RegisterPurchase} />
+        </Route>
+        
+        <Route exact path='/page-not-found' component={() => <Fallback page="pageNotFound" />}/>
         
         <Route exact path='/'>
           <Redirect to="/login" /> 

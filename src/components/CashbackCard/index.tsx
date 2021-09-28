@@ -13,9 +13,9 @@ export const CashbackCard = (props: CashbackCardProps): JSX.Element => {
           <h6 className="text-primary mt-3">Sabe o que é o seu cashback?</h6>
           <p>
             <small>
-              Cashback quer dizer "dinheiro de volta", e funciona de forma simples: <br />
+              {`Cashback quer dizer "dinheiro de volta", e funciona de forma simples: <br />
               Você faz uma compra e seu benefício vem com a devolução de parte do dinheiro gasto.
-              Legal, né?
+              Legal, né?`}
             </small>
           </p>
         </div>
