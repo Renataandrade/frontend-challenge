@@ -1,7 +1,7 @@
 import React from 'react'
 import { Button } from '../../../components/Button'
 import { CashbackCard } from '../../../components/CashbackCard'
-import { Table } from '../../../components/Table'
+import { TableList } from './TableList'
 
 export const ListPurchase = () => {
   return (
@@ -12,7 +12,7 @@ export const ListPurchase = () => {
       </div>
 
       {/** Minhas Compras */}
-      <div className="row mt-5">
+      <div className="row mt-5 mb-4">
         <div className="col">
           <h5>Minhas Compras</h5>
         </div>
@@ -25,8 +25,8 @@ export const ListPurchase = () => {
             Cadastrar compra
           </Button>
         </div>
-        <Table />
       </div>
+      <TableList />
     </div>
   )
 }
