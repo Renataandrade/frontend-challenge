@@ -1,17 +1,20 @@
 import React from 'react'
-import { Button } from '../../../components/Button'
-import { CashbackCard } from '../../../components/CashbackCard'
+import { useHistory } from 'react-router'
+import { Button, CashbackCard } from '../../../components'
+import { PAGES } from '../../../enums/routes'
 import { TableList } from './TableList'
 
-export const ListPurchase = () => {
+export const ListPurchase: React.FC = (): JSX.Element => {
+  const history = useHistory()
+
   return (
     <div className="container">
-      {/** Meu Cashback */}
+      {/** My Cashback */}
       <div className="row p-3 mt-4 d-flex justify-content-center">
         <CashbackCard value={500} />
       </div>
 
-      {/** Minhas Compras */}
+      {/** My Purchases */}
       <div className="row mt-5 mb-4">
         <div className="col">
           <h5>Minhas Compras</h5>
@@ -21,12 +24,43 @@ export const ListPurchase = () => {
             id="register-purchase"
             type="button"
             color="info"
+            onClick={() => {
+              history.push(PAGES.CREATE_PURCHASE)
+            }}
           >
             Cadastrar compra
           </Button>
         </div>
       </div>
-      <TableList />
+      
+      <TableList 
+        purchases={[
+          {
+            id: "00901",
+            price: 55.2,
+            percent_cashback: 0.1,
+            cashback: 5.52,
+            date_purchase: "10/10/2021",
+            status: "EM_ANDAMENTO"
+          },
+          {
+            id: "00901",
+            price: 55.2,
+            percent_cashback: 0.1,
+            cashback: 5.52,
+            date_purchase: "10/10/2021",
+            status: "APROVADO"
+          },
+          {
+            id: "00901",
+            price: 55.2,
+            percent_cashback: 0.1,
+            cashback: 5.52,
+            date_purchase: "10/10/2021",
+            status: "REPROVADO"
+          }
+        ]}
+      />
     </div>
   )
 }

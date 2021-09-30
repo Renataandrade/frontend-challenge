@@ -1,10 +1,15 @@
 import React from 'react'
-import { Button } from '../../../components/Button'
-import { Container } from '../../../components/Container'
-import { Input } from '../../../components/Input'
-import { Title } from '../../../components/Title'
+import {
+  Button,
+  Container,
+  Input,
+  Title
+} from '../../../components'
+import { Formik, Form } from 'formik'
+import { PAGES } from '../../../enums/routes'
+import { FormElements, FormSchema } from './schema'
 
-export const RegisterPurchase = () => {
+export const RegisterPurchase: React.FC = (): JSX.Element => {
   return (
     <section className="container-fluid mt-4 mb-5">
       <div className="row justify-content-center">
@@ -12,6 +17,7 @@ export const RegisterPurchase = () => {
           <Title
             title="Cadastro de Compra"
             backToPage="Minhas Compras"
+            backToRoute={PAGES.PURCHASE}
           />
         </div>
 
@@ -20,41 +26,64 @@ export const RegisterPurchase = () => {
             Preencha os campos abaixo
           </p>
           <Container>
-            <React.Fragment>
-              <div className="row mt-3">
-                <div className="col-12 mt-2">
-                  <Input
-                    id="code"
-                    label="Código do produto"
-                    type="text"
-                  />
-                </div>
-                <div className="col-md-6 col-12 mt-2">
-                  <Input
-                    id="price"
-                    label="Valor (R$)"
-                    type="text"
-                  />
-                </div>
-                <div className="col-md-6 col-12 mt-2">
-                  <Input
-                    id="date_purchase"
-                    label="Data da compra"
-                    type="date"
-                  />
-                </div>
-              </div>
+            <Formik
+              initialValues={FormElements}
+              validationSchema={FormSchema}
+              onSubmit={(values) => {
+                console.log(values)
+              }}
+            >
+              {({ values, errors, touched }) => (
+                <Form>
+                  <div className="row mt-3">
+                    <div className="col-12 mt-2">
+                      <Input
+                        id="code"
+                        name="code"
+                        label="Código da compra"
+                        type="text"
+                        value={values.code}
+                        error={touched.code ? errors.code : ''}
+                      />
+                    </div>
+                    <div className="col-md-6 col-12 mt-2">
+                      <Input
+                        id="price"
+                        name="price"
+                        label="Valor (R$)"
+                        type="text"
+                        value={values.price}
+                        error={touched.price ? errors.price : ''}
+                      />
+                    </div>
+                    <div className="col-md-6 col-12 mt-2">
+                      <Input
+                        id="date_purchase"
+                        name="date_purchase"
+                        label="Data da compra"
+                        type="date"
+                        value={values.date_purchase}
+                        error={touched.date_purchase ? errors.date_purchase : ''}
+                      />
+                    </div>
+                  </div>
 
-              <div className="col pt-4 m-4 d-flex justify-content-md-end justify-content-center">
-                <Button
-                  id="btn-register"
-                  color="primary"
-                  type="button"
-                >
-                  Concluir cadastro
-                </Button>
-              </div>
-            </React.Fragment>
+                  <div 
+                    className="col pt-4 m-4 d-flex 
+                    justify-content-md-end 
+                    justify-content-center"
+                  >
+                    <Button
+                      id="btn-register"
+                      color="secondary"
+                      type="submit"
+                    >
+                      Concluir cadastro
+                    </Button>
+                  </div>
+                </Form>
+              )}
+            </Formik>
           </Container>
         </div>
       </div>
