@@ -1,16 +1,16 @@
 {
-  "user/login": {
+  "userLogin": {
     "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c"
   },
-  "user/register": {
+  "userRegister": {
     "status": 200,
     "message": "Usuário cadastrado."
   },
-  "purchases/register": {
+  "purchasesRegister": {
     "status": 200,
     "message": "Sua compra foi cadastrada."
   },
-  "purchases?pages=1": {
+  "purchasesPage1": {
     "data": [
       {
         "id": "00901",
@@ -47,7 +47,7 @@
     "total_pages": 2,
     "per_page": 5
   },
-  "purchases?pages=2": {
+  "purchasesPage2": {
     "data": [
       {
         "id": "00907",
