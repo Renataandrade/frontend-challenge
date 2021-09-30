@@ -13,34 +13,44 @@
   "purchasesPage1": {
     "data": [
       {
-        "id": "00901",
+        "code": "00901",
         "price": 55.2,
         "percent_cashback": 0.10,
-        "cashback": 5.52
+        "cashback": 5.52,
+        "status": "EM_VALIDACAO",
+        "date_purchase": "25/09/2021"
       },
       {
-        "id": "00902",
+        "code": "00902",
         "price": 50,
         "percent_cashback": 0.20,
-        "cashback": 10
+        "cashback": 10,
+        "status": "APROVADO",
+        "date_purchase": "25/09/2021"
       },
       {
-        "id": "00903",
+        "code": "00903",
         "price": 45,
         "percent_cashback": 0.15,
-        "cashback": 6.75
+        "cashback": 6.75,
+        "status": "APROVADO",
+        "date_purchase": "25/09/2021"
       },
       {
-        "id": "00904",
+        "code": "00904",
         "price": 55.2,
         "percent_cashback": 0.10,
-        "cashback": 5.52
+        "cashback": 5.52,
+        "status": "EM_VALIDACAO",
+        "date_purchase": "25/09/2021"
       },
       {
-        "id": "00905",
+        "code": "00905",
         "price": 50,
         "percent_cashback": 0.20,
-        "cashback": 10
+        "cashback": 10,
+        "status": "REPROVADO",
+        "date_purchase": "25/09/2021"
       }
     ],
     "page": 1,
@@ -50,22 +60,28 @@
   "purchasesPage2": {
     "data": [
       {
-        "id": "00907",
+        "code": "00907",
         "price": 55.2,
         "percent_cashback": 0.10,
-        "cashback": 5.52
+        "cashback": 5.52,
+        "status": "EM_VALIDACAO",
+        "date_purchase": "25/09/2021"
       },
       {
-        "id": "00908",
+        "code": "00908",
         "price": 50,
         "percent_cashback": 0.20,
-        "cashback": 10
+        "cashback": 10,
+        "status": "APROVADO",
+        "date_purchase": "25/09/2021"
       },
       {
-        "id": "00909",
+        "code": "00909",
         "price": 45,
         "percent_cashback": 0.15,
-        "cashback": 6.75
+        "cashback": 6.75,
+        "status": "APROVADO",
+        "date_purchase": "25/09/2021"
       }
     ],
     "page": 2,
