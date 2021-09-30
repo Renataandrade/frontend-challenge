@@ -1,5 +1,5 @@
 {
-  "name": "react-app",
+  "name": "revendedor-oboticario",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -10,14 +10,17 @@
     "@types/node": "^12.20.26",
     "@types/react": "^17.0.24",
     "@types/react-dom": "^17.0.9",
+    "axios": "^0.21.4",
     "bootstrap": "^5.1.1",
+    "formik": "^2.2.9",
     "node-sass": "^6.0.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-router-dom": "^5.3.0",
     "react-scripts": "4.0.3",
     "typescript": "^4.4.3",
-    "web-vitals": "^1.1.2"
+    "web-vitals": "^1.1.2",
+    "yup": "^0.32.9"
   },
   "scripts": {
     "start": "react-scripts start",
