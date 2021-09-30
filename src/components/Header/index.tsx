@@ -1,9 +1,9 @@
 import React from 'react'
-
 import LOGO from '../../assets/svgs/logo.svg'
 import LOGOUT from '../../assets/svgs/logout.svg'
 
-export const Header = () => {
+
+export const Header: React.FC = (): JSX.Element => {
   return (
     <nav className="navbar bg-primary">
       <div className="container">

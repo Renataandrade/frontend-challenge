@@ -1,22 +1,31 @@
 import React from 'react'
+import { Field } from 'formik'
 
-interface InputProps {
-  id: string,
-  type: string,
+interface IInput {
+  id: string
+  type: string
   label: string
+  name: string
+  value: string
+  error?: string
 }
 
-export const Input = (props: InputProps) => {
+export const Input: React.FC<IInput> = (
+  props
+): JSX.Element => {
   return (
-    <React.Fragment>
+    <>
       <label htmlFor={props.id} className="small form-label">
         {props.label}
       </label>
-      <input 
-        type={props.type} 
-        className="form-control" 
+      <Field
+        className="form-control"
         id={props.id}
+        type={props.type} 
+        name={props.name}
+        value={props.value}
       />
-    </React.Fragment>
+      {props.error && <p className="text-danger small">{props.error}</p>}
+    </>
   )
 }

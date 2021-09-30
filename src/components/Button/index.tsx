@@ -1,22 +1,30 @@
 import React from 'react'
 
-interface ButtonProps {
+interface IButton {
   id: string
   type: 'button' | 'submit' | 'reset'
   children: React.ReactChild
   color: 'primary' | 'secondary' | 'info' | 'danger'
   size?: string
+  disabled?: boolean
+  onClick?: () => void
 }
 
-export const Button = (props: ButtonProps) => {
+export const Button: React.FC<IButton> = (
+  props
+): JSX.Element => {
+  const size = props.size ? `col-${props.size}` : ''
+
   return (
     <button
       id={props.id} 
       type={props.type} 
       className={
         `btn btn-sm btn-${props.color}
-        text-white col-${props.size}`
+        text-white ${size}`
       }
+      disabled={props.disabled}
+      onClick={props.onClick}
     >
       {props.children}
     </button>
