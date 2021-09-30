@@ -1,7 +1,7 @@
 import React from 'react'
 import { useHistory } from 'react-router'
 import { Button, CashbackCard } from '../../../components'
-import { PAGES } from '../../../enums/routes'
+import { PAGES } from '../../../enums/pages'
 import { TableList } from './TableList'
 
 export const ListPurchase: React.FC = (): JSX.Element => {

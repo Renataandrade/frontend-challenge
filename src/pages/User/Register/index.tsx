@@ -5,7 +5,7 @@ import {
   Input,
   Title
 } from '../../../components'
-import { PAGES } from '../../../enums/routes'
+import { PAGES } from '../../../enums/pages'
 import { Formik, Form } from 'formik'
 import { FormElements, FormSchema } from './schema'
 

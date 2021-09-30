@@ -1,7 +1,7 @@
 import React from 'react'
 import { useHistory } from 'react-router'
 import { Button } from '../../components'
-import { PAGES } from '../../enums/routes'
+import { PAGES } from '../../enums/pages'
 import { LoginForm } from './Form'
 
 export const Login: React.FC = (): JSX.Element => {

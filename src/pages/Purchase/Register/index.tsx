@@ -6,7 +6,7 @@ import {
   Title
 } from '../../../components'
 import { Formik, Form } from 'formik'
-import { PAGES } from '../../../enums/routes'
+import { PAGES } from '../../../enums/pages'
 import { FormElements, FormSchema } from './schema'
 
 export const RegisterPurchase: React.FC = (): JSX.Element => {
