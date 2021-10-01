@@ -32,35 +32,7 @@ export const ListPurchase: React.FC = (): JSX.Element => {
           </Button>
         </div>
       </div>
-      
-      <TableList 
-        purchases={[
-          {
-            id: "00901",
-            price: 55.2,
-            percent_cashback: 0.1,
-            cashback: 5.52,
-            date_purchase: "10/10/2021",
-            status: "EM_ANDAMENTO"
-          },
-          {
-            id: "00901",
-            price: 55.2,
-            percent_cashback: 0.1,
-            cashback: 5.52,
-            date_purchase: "10/10/2021",
-            status: "APROVADO"
-          },
-          {
-            id: "00901",
-            price: 55.2,
-            percent_cashback: 0.1,
-            cashback: 5.52,
-            date_purchase: "10/10/2021",
-            status: "REPROVADO"
-          }
-        ]}
-      />
+      <TableList />
     </div>
   )
 }
