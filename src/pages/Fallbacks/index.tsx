@@ -1,20 +1,13 @@
 import React from 'react'
+import { FallbackType, IFallbacks } from '../../models/Fallback'
 import { PageNotFound } from './PageNotFound'
 
-interface Fallbacks {
-  [pageNotFound: string]: React.ReactElement
-}
-
-interface FallbackProps {
-  page: string
-}
-
-const fallbacks: Fallbacks = {
+const fallbacks: IFallbacks = {
   pageNotFound: <PageNotFound />
 }
 
 export const Fallback = (
-  props: FallbackProps
+  page: FallbackType
 ): React.ReactElement => {
-  return fallbacks[props.page]
+  return fallbacks[page]
 }
