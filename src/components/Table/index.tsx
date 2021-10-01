@@ -1,7 +1,5 @@
 import React from 'react'
 import { Columns } from './Columns'
-import { Pagination } from './Pagination'
-
 interface ITable {
   columns: string[]
 }
@@ -27,7 +25,6 @@ export const Table: React.FC<ITable> = (
           </tbody>
         </table>
       </div>
-      <Pagination />
     </div>
   )
 }
