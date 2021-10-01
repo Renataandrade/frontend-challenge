@@ -2,8 +2,23 @@ import React from 'react'
 import { Button, Container, Input } from '../../../components'
 import { Formik, Form } from 'formik'
 import { FormElements, FormSchema } from './schema'
+import AuthService from '../../../services/AuthService'
+import { IAuth } from '../../../models/Auth'
+import { useHistory } from 'react-router'
+import { PAGES } from '../../../enums/pages'
 
 export const LoginForm: React.FC = (): JSX.Element => {
+  const history = useHistory()
+
+  const login = (credentials :IAuth) => {
+    const Auth = new AuthService()
+    Auth
+    .login(credentials)
+    .then(() => {
+      history.push(PAGES.PURCHASE)
+    })
+  }
+
   return (
     <Container>
       <div className="col-11 mt-4">
@@ -14,7 +29,8 @@ export const LoginForm: React.FC = (): JSX.Element => {
           initialValues={FormElements}
           validationSchema={FormSchema}
           onSubmit={(values) => {
-            console.log(values)
+            login(values)
+            console.log(values, 'HERE')
           }}
         >
           {({ values, errors, touched }) => (

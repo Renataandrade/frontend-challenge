@@ -1,15 +1,52 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {
   Button,
   Container,
   Input,
-  Title
+  Title,
+  Alert
 } from '../../../components'
 import { PAGES } from '../../../enums/pages'
 import { Formik, Form } from 'formik'
 import { FormElements, FormSchema } from './schema'
+import { IAlert } from '../../../components/Alert'
+import { IUser } from '../../../models/User'
+import UserService from '../../../services/UserService'
+import { useHistory } from 'react-router'
+import { formatCPF } from '../../../helpers/cpf'
 
 export const RegisterUser: React.FC = (): JSX.Element => {
+  const history = useHistory()
+  const [showResponse, setResponse] = useState<IAlert>({ 
+    message: '',
+    type: 'success', 
+    display: "none"
+  })
+
+  const submit = (form :IUser) => {
+    const User = new UserService()
+    User
+    .create(form)
+    .then((res) => {
+      setTimeout(() => {
+        setResponse({ ...showResponse, display: "none" })
+        history.push(PAGES.LOGIN)
+      }, 2000); 
+      setResponse({
+        message: res.message,
+        type: 'success',
+        display: 'block'
+      })
+    })
+    .catch(() => {
+      setResponse({
+        message: 'Ocorreu um erro, tente novamente.',
+        type: 'danger',
+        display: 'block'
+      })
+    })
+  }
+
   return (
     <section className="container-fluid mt-4 mb-5">
       <div className="row justify-content-center">
@@ -28,11 +65,13 @@ export const RegisterUser: React.FC = (): JSX.Element => {
             <Formik
                 initialValues={FormElements}
                 validationSchema={FormSchema}
-                onSubmit={(values) => {
-                  console.log(values)
+                onSubmit={(values, { resetForm }) => {
+                  const { confirmPassword, ...form } = values
+                  submit(form)
+                  resetForm()
                 }}
               >
-                {({ values, errors, touched }) => (
+                {({ values, errors, touched, setValues }) => (
                   <Form>
                     <div className="row mt-3">
                       <div className="col-12 mt-2">
@@ -53,6 +92,9 @@ export const RegisterUser: React.FC = (): JSX.Element => {
                           type="text"
                           value={values.cpf}
                           error={touched.cpf ? errors.cpf : ''}
+                          onChange={() => {
+                            setValues({ ...values, cpf: formatCPF(values.cpf)})
+                          }}
                         />
                       </div>
                       <div className="col-md-6 col-12 mt-2">
@@ -87,6 +129,12 @@ export const RegisterUser: React.FC = (): JSX.Element => {
                       </div>
                     </div>
 
+                    <Alert
+                      type={showResponse.type}
+                      message={showResponse.message}
+                      display={showResponse.display}
+                    />
+
                     <div 
                       className="col pt-4 m-4 
                       d-flex justify-content-md-end 
@@ -95,7 +143,7 @@ export const RegisterUser: React.FC = (): JSX.Element => {
                       <Button
                         id="btn-register"
                         color="secondary"
-                        type="button"
+                        type="submit"
                       >
                         Concluir cadastro
                       </Button>
