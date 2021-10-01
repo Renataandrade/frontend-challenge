@@ -28,7 +28,7 @@ export const Routes = (): JSX.Element => {
           <Route exact path='/purchase/register' component={RegisterPurchase} />
         </Route>
         
-        <Route exact path='/page-not-found' component={() => <Fallback page="pageNotFound" />}/>
+        <Route exact path='/page-not-found' component={() => Fallback("pageNotFound") }/>
         
         <Route exact path='/'>
           <Redirect to="/login" /> 
