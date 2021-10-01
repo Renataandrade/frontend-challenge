@@ -8,6 +8,7 @@ interface IInput {
   name: string
   value: string
   error?: string
+  onChange?: () => void
 }
 
 export const Input: React.FC<IInput> = (
@@ -24,6 +25,7 @@ export const Input: React.FC<IInput> = (
         type={props.type} 
         name={props.name}
         value={props.value}
+        onMouseLeave={props.onChange}
       />
       {props.error && <p className="text-danger small">{props.error}</p>}
     </>
