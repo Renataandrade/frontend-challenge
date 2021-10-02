@@ -6,3 +6,7 @@ export interface IAuth {
 export interface IAuthResponse {
   token: string
 }
+
+export interface IAuthStore {
+  isAuthenticated: boolean
+}
