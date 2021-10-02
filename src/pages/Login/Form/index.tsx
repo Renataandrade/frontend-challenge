@@ -1,20 +1,24 @@
 import React from 'react'
-import { Button, Container, Input } from '../../../components'
+import { useHistory } from 'react-router'
+import { Button, Container, Input } from 'components'
 import { Formik, Form } from 'formik'
 import { FormElements, FormSchema } from './schema'
-import AuthService from '../../../services/AuthService'
-import { IAuth } from '../../../models/Auth'
-import { useHistory } from 'react-router'
-import { PAGES } from '../../../enums/pages'
+import AuthService from 'services/AuthService'
+import { IAuth } from 'models/Auth'
+import { PAGES } from 'enums/pages'
+import { useAppDispatch } from 'store/hooks'
+import { fetchAuthenticated } from 'store/auth'
 
 export const LoginForm: React.FC = (): JSX.Element => {
   const history = useHistory()
+  const dispatch = useAppDispatch()
 
   const login = (credentials :IAuth) => {
     const Auth = new AuthService()
     Auth
     .login(credentials)
     .then(() => {
+      dispatch(fetchAuthenticated(true))
       history.push(PAGES.PURCHASE)
     })
   }

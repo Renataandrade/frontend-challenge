@@ -1,5 +1,5 @@
 import React, { Dispatch, SetStateAction } from 'react'
-import { Button } from '../../Button'
+import { Button } from 'components/Button'
 
 interface IPagination {
   page: number

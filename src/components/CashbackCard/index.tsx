@@ -1,5 +1,5 @@
 import React from 'react'
-import CURRENCY from '../../assets/svgs/currency.svg'
+import CURRENCY from 'assets/svgs/currency.svg'
 
 interface ICashbackCard {
   value: number

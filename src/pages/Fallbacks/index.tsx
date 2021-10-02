@@ -1,5 +1,5 @@
 import React from 'react'
-import { FallbackType, IFallbacks } from '../../models/Fallback'
+import { FallbackType, IFallbacks } from 'models/Fallback'
 import { PageNotFound } from './PageNotFound'
 
 const fallbacks: IFallbacks = {

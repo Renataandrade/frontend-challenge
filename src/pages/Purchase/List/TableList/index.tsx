@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import { Table, Pagination } from '../../../../components'
-import PurchaseSevice from '../../../../services/PurchaseService'
-import { useAppDispatch, useAppSelector } from '../../../../store/hooks'
-import { fetchPurchase } from '../../../../store/purchase'
+import { Table, Pagination } from 'components'
+import PurchaseSevice from 'services/PurchaseService'
+import { useAppDispatch, useAppSelector } from 'store/hooks'
+import { fetchPurchase } from 'store/purchase'
 import { Rows } from './Row'
 
 export const TableList: React.FC = (): JSX.Element => {

@@ -1,13 +1,13 @@
 import React from 'react'
-import { Status, StatusType } from '../../../../../components/Status'
+import { Status, StatusType } from 'components/Status'
 import {
   APROVADO,
   EM_VALIDACAO,
   REPROVADO,
   STATUS
-} from '../../../../../enums/status'
-import { Currency } from '../../../../../helpers/currency'
-import { IPurchaseList } from '../../../../../models/Purchase'
+} from 'enums/status'
+import { Currency } from 'helpers/currency'
+import { IPurchaseList } from 'models/Purchase'
 
 interface IRowTable {
   data: IPurchaseList

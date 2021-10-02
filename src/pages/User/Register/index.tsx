@@ -1,19 +1,19 @@
 import React, { useState } from 'react'
+import { useHistory } from 'react-router'
 import {
   Button,
   Container,
   Input,
   Title,
   Alert
-} from '../../../components'
-import { PAGES } from '../../../enums/pages'
+} from 'components'
+import { PAGES } from 'enums/pages'
 import { Formik, Form } from 'formik'
 import { FormElements, FormSchema } from './schema'
-import { IAlert } from '../../../components/Alert'
-import { IUser } from '../../../models/User'
-import UserService from '../../../services/UserService'
-import { useHistory } from 'react-router'
-import { formatCPF } from '../../../helpers/cpf'
+import { IAlert } from 'components/Alert'
+import { IUser } from 'models/User'
+import UserService from 'services/UserService'
+import { formatCPF } from 'helpers/cpf'
 
 export const RegisterUser: React.FC = (): JSX.Element => {
   const history = useHistory()
@@ -66,8 +66,8 @@ export const RegisterUser: React.FC = (): JSX.Element => {
                 initialValues={FormElements}
                 validationSchema={FormSchema}
                 onSubmit={(values, { resetForm }) => {
-                  const { confirmPassword, ...form } = values
-                  submit(form)
+                  Reflect.deleteProperty(values, 'confirmPassword')
+                  submit(values)
                   resetForm()
                 }}
               >

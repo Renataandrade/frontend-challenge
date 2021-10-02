@@ -5,14 +5,14 @@ import {
   Container,
   Input,
   Title
-} from '../../../components'
+} from 'components'
 import { Formik, Form } from 'formik'
-import { PAGES } from '../../../enums/pages'
+import { PAGES } from 'enums/pages'
 import { FormElements, FormSchema } from './schema'
-import { IPurchase } from '../../../models/Purchase'
-import PurchaseSevice from '../../../services/PurchaseService'
-import { IAlert } from '../../../components/Alert'
-import { Currency } from '../../../helpers/currency'
+import { IPurchase } from 'models/Purchase'
+import { IAlert } from 'components/Alert'
+import { Currency } from 'helpers/currency'
+import PurchaseSevice from 'services/PurchaseService'
 
 export const RegisterPurchase: React.FC = (): JSX.Element => {
   const [showResponse, setResponse] = useState<IAlert>({ 
