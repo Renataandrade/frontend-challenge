@@ -28,8 +28,7 @@ export const Login: React.FC = (): JSX.Element => {
                 Ainda não é um <br /> revendedor?
               </h6>
               <Button
-                data-qa-id="Login_Button_Register"
-                id="btn-register"
+                id="Login_Button_Register"
                 type="button"
                 color="secondary"
                 size="12"

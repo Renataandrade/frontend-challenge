@@ -76,7 +76,7 @@ export const RegisterUser: React.FC = (): JSX.Element => {
                     <div className="row mt-3">
                       <div className="col-12 mt-2">
                         <Input
-                          id="name"
+                          id="Register_Input_Name"
                           name="name"
                           label="Nome completo"
                           type="text"
@@ -86,7 +86,7 @@ export const RegisterUser: React.FC = (): JSX.Element => {
                       </div>
                       <div className="col-md-6 col-12 mt-2">
                         <Input
-                          id="cpf"
+                          id="Register_Input_CPF"
                           name="cpf"
                           label="CPF"
                           type="text"
@@ -99,7 +99,7 @@ export const RegisterUser: React.FC = (): JSX.Element => {
                       </div>
                       <div className="col-md-6 col-12 mt-2">
                         <Input
-                          id="email"
+                          id="Register_Input_Email"
                           name="email"
                           label="E-mail"
                           type="email"
@@ -110,7 +110,7 @@ export const RegisterUser: React.FC = (): JSX.Element => {
                       <div className="col-md-6 col-12 mt-2">
                         <Input
                           name="password"
-                          id="password"
+                          id="Register_Input_Password"
                           label="Senha"
                           type="password"
                           value={values.password}
@@ -141,7 +141,7 @@ export const RegisterUser: React.FC = (): JSX.Element => {
                       justify-content-center"
                     >
                       <Button
-                        id="btn-register"
+                        id="RegisterForm_Button_Cadastrar"
                         color="secondary"
                         type="submit"
                       >

@@ -30,17 +30,17 @@ export const LoginForm: React.FC = (): JSX.Element => {
           Faça seu login
         </p>
         <Formik
+          data-testid="Form_Submit"
           initialValues={FormElements}
           validationSchema={FormSchema}
           onSubmit={(values) => {
             login(values)
-            console.log(values, 'HERE')
           }}
         >
           {({ values, errors, touched }) => (
             <Form>
               <Input
-                id="email"
+                id="LoginForm_Input_Email"
                 name="email"
                 label="E-mail"
                 type ="email"
@@ -49,10 +49,10 @@ export const LoginForm: React.FC = (): JSX.Element => {
               />
 
               <Input
-                id="password"
+                id="LoginForm_Input_Password"
                 name="password"
                 label="Senha"
-                type ="password"
+                type="password"
                 value={values.password}
                 error={touched.password ? errors.password : ''}
               />
@@ -60,7 +60,7 @@ export const LoginForm: React.FC = (): JSX.Element => {
               <div className="col m-4 text-center">
                 <p className="small">Esqueci minha senha</p>
                 <Button
-                  id="btn-login"
+                  id="LoginForm_Button_Login"
                   type="submit"
                   color="secondary"
                   size="10"

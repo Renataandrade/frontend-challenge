@@ -17,7 +17,7 @@ export const Button: React.FC<IButton> = (
 
   return (
     <button
-      id={props.id} 
+      data-testid={props.id} 
       type={props.type} 
       className={
         `btn btn-sm btn-${props.color}
