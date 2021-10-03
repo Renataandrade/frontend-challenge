@@ -11,7 +11,7 @@ Foi utilizado o Figma para a criação do layout.
 [Visualizar no Figma](https://www.figma.com/file/kwA5L5ysom12uZLD5I6byu/Botic%C3%A1rio) :arrow_upper_right:
 
 #
-### Serviço Fake
+### :cake: Serviço Fake
 Foi utilizado o MyJsonServer.
 
 [Visualizar no MyJsonServer](https://my-json-server.typicode.com/Renataandrade/frontend-challenge) :arrow_upper_right:
