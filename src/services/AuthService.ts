@@ -34,7 +34,7 @@ class AuthService {
    */
   public logout = async (): Promise<IAuthResponse> => {
     return await RequestAdapter.request<IAuthResponse>({
-      url: ENDPOINTS.LOGIN,
+      url: ENDPOINTS.LOGOUT,
       method: METHOD.GET
     })
     .then((res) => {
