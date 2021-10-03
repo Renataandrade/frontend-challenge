@@ -30,6 +30,7 @@ Foi utilizado o MyJsonServer.
 - Typescript;
 - Redux;
 - Bootstrap (Apenas .css);
+- Formik;
 - Jest para Teste Unitário;
 - MyJsonServer para API fake
 
