@@ -7,7 +7,6 @@ import {
 import { Header, Footer } from 'components'
 import {
   Fallback,
-  RegisterUser,
   RegisterPurchase,
   ListPurchase
 } from 'pages'
@@ -24,9 +23,8 @@ export const PrivateRoutes = (): JSX.Element => {
         <ListPurchase />
       </Route>
 
-      <Route path='*/register'>
+      <Route path='/purchase/register'>
         <Footer />
-        <Route exact path='/register' component={RegisterUser} />
         <Route exact path='/purchase/register' component={RegisterPurchase} />
       </Route>
 
