@@ -33,8 +33,10 @@ Foi utilizado o MyJsonServer.
 - Formik;
 - Jest para Teste Unitário;
 - MyJsonServer para API fake
-
+#
 ### :rocket: Inicializando aplicação
+
+> Antes de tudo, altere o arquivo '.env-example' para '.env'.
 
 Para instalar as dependências, execute no terminal:
 
@@ -45,7 +47,7 @@ Em seguida, para rodar a aplicação, execute:
 ``` npm start ```
 
 Para mais detalhes, consulte a [Documentação React](https://github.com/facebook/create-react-app) :arrow_upper_right:
-
+#
 ### :artificial_satellite: Executando testes
 
 Para rodar os testes unitários, execute no terminal:
