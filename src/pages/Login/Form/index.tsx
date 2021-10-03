@@ -1,9 +1,28 @@
 import React from 'react'
-import { Button, Container, Input } from '../../../components'
+import { useHistory } from 'react-router'
+import { Button, Container, Input } from 'components'
 import { Formik, Form } from 'formik'
 import { FormElements, FormSchema } from './schema'
+import AuthService from 'services/AuthService'
+import { IAuth } from 'models/Auth'
+import { PAGES } from 'enums/pages'
+import { useAppDispatch } from 'store/hooks'
+import { fetchAuthenticated } from 'store/auth'
 
 export const LoginForm: React.FC = (): JSX.Element => {
+  const history = useHistory()
+  const dispatch = useAppDispatch()
+
+  const login = (credentials :IAuth) => {
+    const Auth = new AuthService()
+    Auth
+    .login(credentials)
+    .then(() => {
+      dispatch(fetchAuthenticated(true))
+      history.push(PAGES.PURCHASE)
+    })
+  }
+
   return (
     <Container>
       <div className="col-11 mt-4">
@@ -11,16 +30,17 @@ export const LoginForm: React.FC = (): JSX.Element => {
           Faça seu login
         </p>
         <Formik
+          data-testid="Form_Submit"
           initialValues={FormElements}
           validationSchema={FormSchema}
           onSubmit={(values) => {
-            console.log(values)
+            login(values)
           }}
         >
           {({ values, errors, touched }) => (
             <Form>
               <Input
-                id="email"
+                id="LoginForm_Input_Email"
                 name="email"
                 label="E-mail"
                 type ="email"
@@ -29,10 +49,10 @@ export const LoginForm: React.FC = (): JSX.Element => {
               />
 
               <Input
-                id="password"
+                id="LoginForm_Input_Password"
                 name="password"
                 label="Senha"
-                type ="password"
+                type="password"
                 value={values.password}
                 error={touched.password ? errors.password : ''}
               />
@@ -40,7 +60,7 @@ export const LoginForm: React.FC = (): JSX.Element => {
               <div className="col m-4 text-center">
                 <p className="small">Esqueci minha senha</p>
                 <Button
-                  id="btn-login"
+                  id="LoginForm_Button_Login"
                   type="submit"
                   color="secondary"
                   size="10"

@@ -11,6 +11,11 @@ Foi utilizado o Figma para a criação do layout.
 [Visualizar no Figma](https://www.figma.com/file/kwA5L5ysom12uZLD5I6byu/Botic%C3%A1rio) :arrow_upper_right:
 
 #
+### Serviço Fake
+Foi utilizado o MyJsonServer.
+
+[Visualizar no MyJsonServer](https://my-json-server.typicode.com/Renataandrade/frontend-challenge) :arrow_upper_right:
+#
 ### :clipboard: Checklist
 
 - [x] Tela de login
@@ -22,8 +27,28 @@ Foi utilizado o Figma para a criação do layout.
 ### :hammer: Ferramentas utilizadas
 
 - ReactJS;
+- Typescript;
 - Redux;
-- Bootstrap;
-- JWT (Json Web Token);
+- Bootstrap (Apenas .css);
 - Jest para Teste Unitário;
-- Cypress para Teste de Automação.
+- MyJsonServer para API fake
+
+### :rocket: Inicializando aplicação
+
+Para instalar as dependências, execute no terminal:
+
+``` npm install ```
+
+Em seguida, para rodar a aplicação, execute:
+
+``` npm start ```
+
+Para mais detalhes, consulte a [Documentação React](https://github.com/facebook/create-react-app) :arrow_upper_right:
+
+### :artificial_satellite: Executando testes
+
+Para rodar os testes unitários, execute no terminal:
+
+``` npm run test ```
+
+Para mais detalhes, consulte a [Documentação Jest](https://jestjs.io/docs/tutorial-react) :arrow_upper_right: ou [Documentação React-Test-Library](https://testing-library.com/docs/react-testing-library/intro/) :arrow_upper_right:

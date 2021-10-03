@@ -1,42 +1,40 @@
-import React from 'react'
-import { Button } from '../../Button'
+import React, { Dispatch, SetStateAction } from 'react'
+import { Button } from 'components/Button'
 
-export const Pagination: React.FC = (): JSX.Element => {
-  const data = {
-    "page": 1,
-    "total_page": 1,
-    "per_page": 5
-  }
-  
+interface IPagination {
+  page: number
+  total_pages: number
+  next: Dispatch<SetStateAction<number>>
+}
+
+export const Pagination: React.FC<IPagination> = (props): JSX.Element => {
   const isButtonNextDisabled = () => {
-    return data.total_page <= 1
+    return props.total_pages === props.page
   }
 
   const isButtonPrevDisabled = () => {
-    return data.total_page <= 1
+    return props.total_pages > props.page
   }
 
   return (
-    <div className="row d-flex align-items-center justify-content-end mt-4 mb-4">
-      <div className="col-md-1 col-4">
+    <div className="row mb-4">
+      <div className="col-12 small text-center d-flex align-items-center justify-content-end">
         <Button 
           id="btn-next" 
           type="button" 
           color="secondary" 
           disabled={isButtonPrevDisabled()}
+          onClick={() => props.next(props.page - 1)}
         >
           prev
         </Button>
-      </div>
-      <div className="col-md-1 col-4 small">
-        {data.page} de {data.total_page}
-      </div>
-      <div className="col-md-1 col-4">
+        <span className="m-4">{props.page} de {props.total_pages}</span>
         <Button 
           id="btn-next" 
           type="button" 
           color="secondary"
           disabled={isButtonNextDisabled()}
+          onClick={() => props.next(props.page + 1)}
         >
           next
         </Button>

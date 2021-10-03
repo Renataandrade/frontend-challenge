@@ -1,6 +1,6 @@
 import React from 'react'
 import { useHistory } from 'react-router'
-import { Button } from '../../../components'
+import { Button } from 'components'
 
 export const PageNotFound: React.FC = (): JSX.Element => {
   const history = useHistory()
@@ -19,7 +19,7 @@ export const PageNotFound: React.FC = (): JSX.Element => {
             color="secondary"
             size="8"
             onClick={() => { 
-              history.goBack()
+              history.push('/')
             }}
           >
             Voltar

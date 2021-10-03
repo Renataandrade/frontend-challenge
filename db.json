@@ -2,6 +2,10 @@
   "userLogin": {
     "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c"
   },
+  "userLogout": {
+    "status": 200,
+    "message": "Usuário deslogado."
+  },
   "userRegister": {
     "status": 200,
     "message": "Usuário cadastrado."
@@ -60,7 +64,7 @@
   "purchasesPage2": {
     "data": [
       {
-        "code": "00907",
+        "code": "00906",
         "price": 55.2,
         "percent_cashback": 0.10,
         "cashback": 5.52,
@@ -68,7 +72,7 @@
         "date_purchase": "25/09/2021"
       },
       {
-        "code": "00908",
+        "code": "00907",
         "price": 50,
         "percent_cashback": 0.20,
         "cashback": 10,
@@ -76,7 +80,7 @@
         "date_purchase": "25/09/2021"
       },
       {
-        "code": "00909",
+        "code": "00908",
         "price": 45,
         "percent_cashback": 0.15,
         "cashback": 6.75,
