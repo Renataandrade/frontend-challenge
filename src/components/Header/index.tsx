@@ -16,7 +16,6 @@ export const Header: React.FC = (): JSX.Element => {
     .logout()
     .then(() => {
       dispatch(fetchAuthenticated(false))
-      // history.push(PAGES.PURCHASE)
     })
   }
 
